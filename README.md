@@ -61,6 +61,8 @@ https://us-west-2.console.aws.amazon.com/ecr/repositories?region=us-west-2
 9. The server should now resolve by visiting the public DNS name located within your load balancer's basic configuration overview:
 ![dns name](https://user-images.githubusercontent.com/38591271/106989759-ac7a1700-6727-11eb-9774-669e315bf965.png)
 
+NOTE: It may take 3-5 minutes for the clusters to populate as targets within the load balancer and check in as healthy. You will not be able to resolve the DNS address until all clusters display a 'healthy' status.
+
 You should see the following 'Hello Opal!' content displayed in your browser:
 ![dns name](https://user-images.githubusercontent.com/38591271/106992259-d71a9e80-672c-11eb-9251-0aee8c9bf4a1.png)
 
