@@ -25,7 +25,7 @@ You will need the latest versions of Node Package Manager (npm), AWS CLI, Docker
 
 `$ cd opal-code-challenge`
 
-2. Create a node project and install npm express to support routing:
+2. Create a node project and install Express JS to support routing:
 
 `$ npm init --y`
 
