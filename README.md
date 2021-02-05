@@ -46,15 +46,15 @@ https://us-west-2.console.aws.amazon.com/ecr/repositories?region=us-west-2
 
 ![deploy to aws ecr](https://user-images.githubusercontent.com/38591271/106989243-961f8b80-6726-11eb-9d03-a1fd92a757a7.png)
 
-6. NOTE: There is an [error that occurs](https://github.com/saladshootrdlux/opal-code-challenge/issues/7) when the entire block of code within `main.tf` is run at once. As such, the next set of instructions have been sectioned into two additional 'sub-steps' that require we modify the `main.tf` file. We already created our ECR repository (listed as sub-step 1) when we executed `$ terraform apply` earlier. See the following: 
+6. NOTE: There is an [error that occurs](https://github.com/saladshootrdlux/opal-code-challenge/issues/7) when the entire block of code within `main.tf` is run at once. As such, the next set of instructions have been sectioned into two additional 'sub-steps' that require we modify the `main.tf` file. We already created our ECR repository (shown below as "## Step 1") when we executed `$ terraform apply` earlier. See the following: 
 
 ![main tf steps](https://user-images.githubusercontent.com/38591271/106988044-9702ee00-6723-11eb-8cca-6ab4180c3d58.png)
 
-7. We will now uncomment sub-step 2, save, and re-run `$ terraform apply` to create our cluster next:
+7. We will now uncomment everything under "## Step 2: ..." as shown below, save, and re-run `$ terraform apply` to create our cluster next:
 
 ![main tf steps2](https://user-images.githubusercontent.com/38591271/106989626-645af480-6727-11eb-8e71-1717c0d8da65.png)
 
-8. Finally, uncomment all remaining code (sub-step 3), save, and re-run `$ terraform apply` to create the remaining VPC, load balancer, settings, tasks, group, security policies, and routing:
+8. Finally, uncomment all remaining code ("## Step 3: ..." and below), save, and again, re-run `$ terraform apply` to create the remaining VPC, load balancer, settings, tasks, group, security policies, and routing:
 
 ![main tf steps3](https://user-images.githubusercontent.com/38591271/106990657-85244980-6729-11eb-8f3c-f438032d481c.png)
 
