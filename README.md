@@ -46,7 +46,7 @@ https://us-west-2.console.aws.amazon.com/ecr/repositories?region=us-west-2
 
 ![deploy to aws ecr](https://user-images.githubusercontent.com/38591271/106989243-961f8b80-6726-11eb-9d03-a1fd92a757a7.png)
 
-6. NOTE: There is an error that occurs[mentioned here](https://github.com/saladshootrdlux/opal-code-challenge/issues/7) when the entire block of code within `main.tf` is run at once. As such, the next set of instructions have been sectioned into two additional 'sub-steps' that require we modify the `main.tf` file. We already created our ECR repository (listed as sub-step 1) when we executed `$ terraform apply` earlier. See the following: 
+6. NOTE: There is an [error that occurs](https://github.com/saladshootrdlux/opal-code-challenge/issues/7) when the entire block of code within `main.tf` is run at once. As such, the next set of instructions have been sectioned into two additional 'sub-steps' that require we modify the `main.tf` file. We already created our ECR repository (listed as sub-step 1) when we executed `$ terraform apply` earlier. See the following: 
 
 ![main tf steps](https://user-images.githubusercontent.com/38591271/106988044-9702ee00-6723-11eb-8cca-6ab4180c3d58.png)
 
