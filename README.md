@@ -1,6 +1,8 @@
 # opal-code-challenge
 This is a demo application for Opal's junior devops code challenge. This basic 'Hello World' style application uses Terraform to help automate the deployment and destruction of a Dockerized Node application via AWS ECS. The AWS console is used for controls, monitoring and health checks.
 
+NOTE: The 'react-demo-app' directory is not in use currently or part of the MVP, but was planned for as a fun future project given more time.
+
 ## Technologies Used
 The demo application includes the following technologies and reasoning for their use:
 
