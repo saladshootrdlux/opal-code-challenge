@@ -19,7 +19,7 @@ The demo application includes the following technologies and reasoning for their
 
 You will need the latest versions of Node Package Manager (npm), AWS CLI, Docker desktop, and Terraform to be installed and executable via command line. The AWS region used in this application is us-west-2.
 
-### Steps
+### Creating the Application and Hosting on AWS
 
 1. From an empty directory, clone and change to the opal-code-challenge demo directory:
 
@@ -46,15 +46,15 @@ https://us-west-2.console.aws.amazon.com/ecr/repositories?region=us-west-2
 
 ![deploy to aws ecr](https://user-images.githubusercontent.com/38591271/106989243-961f8b80-6726-11eb-9d03-a1fd92a757a7.png)
 
-6. To ensure the server starts successfully, the next set of instructions have been sectioned into three steps within the `main.tf` file. Please see the areas of the following image circled in red:
+6. NOTE: There is an error that occurs[mentioned here](https://github.com/saladshootrdlux/opal-code-challenge/issues/7) when the entire block of code within `main.tf` is run at once. As such, the next set of instructions have been sectioned into two additional 'sub-steps' that require we modify the `main.tf` file. We already created our ECR repository (listed as sub-step 1) when we executed `$ terraform apply` earlier. See the following: 
 
 ![main tf steps](https://user-images.githubusercontent.com/38591271/106988044-9702ee00-6723-11eb-8cca-6ab4180c3d58.png)
 
-7. We will now uncomment Step 2, save, and re-run `$ terraform apply` to create our cluster:
+7. We will now uncomment sub-step 2, save, and re-run `$ terraform apply` to create our cluster next:
 
 ![main tf steps2](https://user-images.githubusercontent.com/38591271/106989626-645af480-6727-11eb-8e71-1717c0d8da65.png)
 
-8. Finally, uncomment all remaining code, save, and re-reun `$ terraform apply` to create the remaining VPC, load balancer, settings, tasks, group, security policies, and routing:
+8. Finally, uncomment all remaining code (sub-step 3), save, and re-reun `$ terraform apply` to create the remaining VPC, load balancer, settings, tasks, group, security policies, and routing:
 
 ![main tf steps3](https://user-images.githubusercontent.com/38591271/106990657-85244980-6729-11eb-8f3c-f438032d481c.png)
 
