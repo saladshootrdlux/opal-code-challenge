@@ -83,6 +83,8 @@ If you'd like to re-deploy the server with any changes, I recommend remembering 
 
 All in all, for my first experience using AWS ECS and Terraform, I have found that this is an incredibly robust toolset for application hosting, continuity, monitoring, and general automation. 
 
-I would have liked to have resolved the script error when deploying via `terraform apply` but did not have enough time to determine the exact cause and a workaround. I would also have liked to automate further by boiling down the deployment commands into a single bash script, which would probably require finding a way to interface with AWS ECR via AWS CLI which clearly just requires digging a bit more into the documentation.
+I would have liked to have resolved the script error [mentioned here](https://github.com/saladshootrdlux/opal-code-challenge/issues/7) that required breaking up `main.tf` into three 'steps' when deploying via `terraform apply` but did not have enough time to determine the exact cause or a cleaner workaround. 
 
-In the future, I had planned to deploy a basic react app within the node application, and perhaps hosted some funny content, but I got pretty lost in terraform instead.
+I would also have liked to boil down the deployment commands into a single bash script, which would require more familiarization with interfacing with AWS ECR via AWS CLI, and clearly just requires digging a bit more into the documentation.
+
+Given more time, I had planned to tinker with deploying a basic react app within the existing node application, and perhaps hosted some funny content, but I got pretty lost in terraform instead.
