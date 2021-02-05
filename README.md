@@ -42,7 +42,7 @@ You will need the latest versions of Node Package Manager (npm), AWS CLI, Docker
 4. Navigate to the AWS ECR repository that was just created using terraform:
 https://us-west-2.console.aws.amazon.com/ecr/repositories?region=us-west-2
 
-5. Deploy the newly created Node application as a Docker image to AWS ECR by copying / pasting each of the commands shown below from your AWS ECR repository into your AWS CLI:
+5. Deploy the newly created node application as a docker image to AWS ECR by copying / pasting each of the commands shown below from your AWS ECR repository into your AWS CLI:
 
 ![deploy to aws ecr](https://user-images.githubusercontent.com/38591271/106989243-961f8b80-6726-11eb-9d03-a1fd92a757a7.png)
 
