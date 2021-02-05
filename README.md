@@ -22,16 +22,19 @@ You will need the latest versions of Node Package Manager (npm), AWS CLI, Docker
 1. From an empty directory, clone and change to the opal-code-challenge demo directory:
 
 `$ git clone git@github.com:saladshootrdlux/opal-code-challenge.git`
+
 `cd opal-code-challenge`
 
 2. Create a node project and install npm express to support routing:
 
 `$ npm init --y`
+
 `$ npm install express`
 
 3. Initialize Terraform and apply the included `main.tf` plan:
 
 `$ terraform init`
+
 `$ terraform apply`
 
 4. Navigate to the AWS ECR repository that was just created by Terraform:
