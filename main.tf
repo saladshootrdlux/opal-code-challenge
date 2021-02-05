@@ -1,7 +1,23 @@
+## Step 1: Create our ECR repository for pushing our Node app.
+
 provider "aws" {
   version = "~> 2.0"
   region  = "us-west-2"
 }
+
+resource "aws_ecr_repository" "my_first_ecr_repo" {
+  name = "my-first-ecr-repo"
+}
+
+# ## Code below this line may need to be initialized after creating the repository and pushing the docker image to ECS.
+
+## Step 2: Create our cluster.
+resource "aws_ecs_cluster" "my_cluster" {
+  name = "my-cluster" # Naming the cluster
+}
+
+
+## Step 3: Create remaining VPC settings, tasks, group, security policies, and routing.
 
 # Providing a reference to our default VPC
 resource "aws_default_vpc" "default_vpc" {
@@ -18,14 +34,6 @@ resource "aws_default_subnet" "default_subnet_b" {
 
 resource "aws_default_subnet" "default_subnet_c" {
   availability_zone = "us-west-2c"
-}
-
-resource "aws_ecr_repository" "my_first_ecr_repo" {
-  name = "my-first-ecr-repo"
-}
-
-resource "aws_ecs_cluster" "my_cluster" {
-  name = "my-cluster" # Naming the cluster
 }
 
 
