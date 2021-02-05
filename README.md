@@ -54,7 +54,7 @@ https://us-west-2.console.aws.amazon.com/ecr/repositories?region=us-west-2
 
 ![main tf steps2](https://user-images.githubusercontent.com/38591271/106989626-645af480-6727-11eb-8e71-1717c0d8da65.png)
 
-8. Finally, uncomment all remaining code (sub-step 3), save, and re-reun `$ terraform apply` to create the remaining VPC, load balancer, settings, tasks, group, security policies, and routing:
+8. Finally, uncomment all remaining code (sub-step 3), save, and re-run `$ terraform apply` to create the remaining VPC, load balancer, settings, tasks, group, security policies, and routing:
 
 ![main tf steps3](https://user-images.githubusercontent.com/38591271/106990657-85244980-6729-11eb-8f3c-f438032d481c.png)
 
