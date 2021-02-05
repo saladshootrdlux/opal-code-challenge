@@ -1,5 +1,7 @@
+# Ignoring terraform and node temporary local files and misc Apple related dot file.
 .terraform
 terraform.tfstate
 package.json
 terraform.tfstate.backup
 .terraform.lock.hcl
+.DS_store

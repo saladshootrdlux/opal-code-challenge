@@ -9,7 +9,8 @@ resource "aws_ecr_repository" "my_first_ecr_repo" {
   name = "my-first-ecr-repo"
 }
 
-# ## Code below this line may need to be initialized after creating the repository and pushing the docker image to ECS.
+## NOTE: Code below this line will need to be initialized after creating the repository and pushing the Docker image.
+## Attempting to connect to the Node port exposed at 3000 prior to Docker initialization has resulted in errors.
 
 ## Step 2: Create our cluster.
 resource "aws_ecs_cluster" "my_cluster" {
@@ -17,13 +18,13 @@ resource "aws_ecs_cluster" "my_cluster" {
 }
 
 
-## Step 3: Create remaining VPC settings, tasks, group, security policies, and routing.
+## Step 3: Create remaining VPC, load balancer, settings, tasks, group, security policies, and routing.
 
-# Providing a reference to our default VPC
+# Providing a reference to default VPC
 resource "aws_default_vpc" "default_vpc" {
 }
 
-# Providing a reference to our default subnets
+# Providing a reference to default subnets
 resource "aws_default_subnet" "default_subnet_a" {
   availability_zone = "us-west-2a"
 }
@@ -38,7 +39,7 @@ resource "aws_default_subnet" "default_subnet_c" {
 
 
 resource "aws_ecs_task_definition" "my_first_task" {
-  family                   = "my-first-task" # Naming our first task
+  family                   = "my-first-task" # Naming the first task
   container_definitions    = <<DEFINITION
   [
     {
@@ -57,7 +58,7 @@ resource "aws_ecs_task_definition" "my_first_task" {
   ]
   DEFINITION
   requires_compatibilities = ["FARGATE"] # Stating that we are using ECS Fargate
-  network_mode             = "awsvpc"    # Using awsvpc as our network mode as this is required for Fargate
+  network_mode             = "awsvpc"    # Using awsvpc as network mode as this is required for Fargate
   memory                   = 512         # Specifying the memory our container requires
   cpu                      = 256         # Specifying the CPU our container requires
   execution_role_arn       = "${aws_iam_role.ecsTaskExecutionRole.arn}"
@@ -85,7 +86,7 @@ resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
 }
 
 resource "aws_alb" "application_load_balancer" {
-  name               = "test-lb-tf" # Naming our load balancer
+  name               = "test-lb-tf" # Naming the load balancer
   load_balancer_type = "application"
   subnets = [ # Referencing the default subnets
     "${aws_default_subnet.default_subnet_a.id}",
@@ -122,12 +123,12 @@ resource "aws_lb_target_group" "target_group" {
 }
 
 resource "aws_lb_listener" "listener" {
-  load_balancer_arn = "${aws_alb.application_load_balancer.arn}" # Referencing our load balancer
+  load_balancer_arn = "${aws_alb.application_load_balancer.arn}" # Referencing the load balancer
   port              = "80"
   protocol          = "HTTP"
   default_action {
     type             = "forward"
-    target_group_arn = "${aws_lb_target_group.target_group.arn}" # Referencing our tagrte group
+    target_group_arn = "${aws_lb_target_group.target_group.arn}" # Referencing the target group
   }
 }
 
