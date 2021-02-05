@@ -1,5 +1,5 @@
 # opal-code-challenge
-This is a demo application for Opal's junior devops code challenge. This basic 'Hello World' style application uses Terraform to help automate the deployment and destruction of a Dockerized Node application via AWS ECS. The AWS console is used for controls, monitoring and health checks.
+This is a demo application for Opal's junior devops code challenge. This basic 'Hello World' style application uses terraform to help automate the deployment and destruction of a dockerized node application via AWS ECS. The AWS console is used for controls, monitoring and health checks.
 
 NOTE: The 'react-demo-app' directory is not in use currently or part of the MVP, but was planned for as a fun future project given more time.
 
@@ -33,13 +33,13 @@ You will need the latest versions of Node Package Manager (npm), AWS CLI, Docker
 
 `$ npm install express`
 
-3. Initialize Terraform and apply the included `main.tf` plan:
+3. Initialize terraform and apply the included `main.tf` plan:
 
 `$ terraform init`
 
 `$ terraform apply`
 
-4. Navigate to the AWS ECR repository that was just created by Terraform:
+4. Navigate to the AWS ECR repository that was just created using terraform:
 https://us-west-2.console.aws.amazon.com/ecr/repositories?region=us-west-2
 
 5. Deploy the newly created Node application as a Docker image to AWS ECR by copying / pasting each of the commands shown below from your AWS ECR repository into your AWS CLI:
